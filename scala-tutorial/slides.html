@@ -551,6 +551,35 @@ abstract class Node[T](val v: T, next: Node[T])
     <section class='left slide top'>
       <div class='spacer top'></div>
       <div class='content'>
+        <h1>Primary Constructor</h1>
+
+        <ul>
+          <li>Defined implicitly</li>
+          <li>Class parameters are parameters of the primary constructor</li>
+          <li>Class body is the body of the primary constructor</li>
+          <li>If the superclass constructors take parameters, they have to be passed in the <code>extends</code> clause</li>
+        </ul>
+
+        <textarea class='code' display='none' mode='text/x-scala'>
+abstract class Vehicle(passengers: Int) {
+  println(s"initializing a vehicle for $passengers passengers...")
+  def breakDown(again: Boolean): Unit
+}
+
+abstract class Car(seats: Int, isElectric: Boolean) extends Vehicle(seats) {
+  def start(): Unit
+  def stop(): Unit
+  // ...
+}
+</textarea>
+
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+
+    <section class='left slide top'>
+      <div class='spacer top'></div>
+      <div class='content'>
         <h1>Exercise 2</h1>
 
         <ul>
