@@ -670,7 +670,7 @@ new Car("VW", "Golf")</textarea>
     <section class='left slide top'>
       <div class='spacer top'></div>
       <div class='content'>
-        <h1>Trait example</h1>
+        <h1>Exercise: Traits</h1>
 
         <textarea class='code' display='none' mode='text/x-scala'>
 trait Ordered[A] extends java.lang.Comparable[A] {
@@ -681,19 +681,7 @@ trait Ordered[A] extends java.lang.Comparable[A] {
 }
 
 case class Person(val name: String, val age: Int)
-     extends Ordered[Person] {
-
-  def compareTo(that: Person): Int =
-    if (name < that.name) -1
-    else if (name > that.name) 1
-    else age - that.age
-}
-
-val p1 = new Person("anton", 10)
-val p2 = new Person("berta", 5)
-val p3 = new Person("anton", 9)
-val ps = List(p1, p2, p3)
-ps.sorted</textarea>
+</textarea>
 
       </div>
       <div class='spacer bottom'></div>
