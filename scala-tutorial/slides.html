@@ -500,6 +500,112 @@ AppleWatch.greeting("Tim")</textarea>
     <section class='left slide top'>
       <div class='spacer top'></div>
       <div class='content'>
+        <h1>The <code>main</code> Method</h1>
+
+        <ul>
+          <li>Applications don't have to extend the <code>App</code> trait</li>
+          <li>Instead, a <code>main</code> method can be defined explicitly</li>
+          <li>The following object can be run on the command-line as follows:<br/>
+              <code>scala -cp [outdir] recfun.Main</code></li>
+        </ul>
+
+        <textarea class='code' display='none' mode='text/x-scala'>
+package recfun
+
+object Main {
+  // args: command-line arguments
+  def main(args: Array[String]) {
+    println("hello, world")
+  }
+}</textarea>
+
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+
+    <section class='left slide top'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Recursive Functions</h1>
+
+        <p>
+          Example: computing the Fibonacci series
+          <ul>
+            <li>A series of integer numbers in which each number (Fibonacci number) is the sum
+                of the two preceding numbers.</li>
+            <li>The Fibonacci series starts as follows: 1, 1, 2, 3, 5, 8, ...</li>
+          </ul>
+        </p>
+
+        <p>
+          Task: write a recursive function that computes the n-th Fibonacci number:
+        </p>
+
+        <textarea class='code' display='none' mode='text/x-scala'>
+def fib(n: Int): Int = ???
+        </textarea>
+
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+
+    <section class='left slide top'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Lists</h1>
+
+        <ul>
+          <li>Scala has a comprehensive <a href="http://docs.scala-lang.org/overviews/collections/introduction.html">collections library</a></li>
+          <li>In particular, its standard library provides a number of powerful immutable collection types</li>
+          <li>Immutable collections have several advantages over mutable collections, e.g., they enable equational
+              reasoning, and they can safely be accessed concurrently.</li>
+          <li>Note: the type <code>List[T]</code> does not have to be imported; it is an alias of
+              <code>scala.collection.immutable.List[T]</code>.</li>
+        </ul>
+
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+
+    <section class='left slide top'>
+      <div class='spacer top'></div>
+      <div class='content'>
+        <h1>Lists: Basics</h1>
+
+        <textarea class='code' display='none' mode='text/x-scala'>
+// create a list given a few integers:
+scala> val l = List(1, 2, 3, 4)
+l: List[Int] = List(1, 2, 3, 4)
+
+scala> val first = l.head
+first: Int = 1
+
+scala> val rest = l.tail
+rest: List[Int] = List(2, 3, 4)
+
+// `l` did not change:
+scala> l
+res0: List[Int] = List(1, 2, 3, 4)
+
+// create a new list using `::` ("cons")
+scala> val l2 = 10 :: rest
+l2: List[Int] = List(10, 2, 3, 4)
+
+// neither `rest` nor `l` changed:
+scala> rest
+res1: List[Int] = List(2, 3, 4)
+
+scala> l
+res2: List[Int] = List(1, 2, 3, 4)
+</textarea>
+
+      </div>
+      <div class='spacer bottom'></div>
+    </section>
+
+    <section class='left slide top'>
+      <div class='spacer top'></div>
+      <div class='content'>
         <h2>Classes and traits</h2>
       </div>
       <div class='spacer bottom'></div>
